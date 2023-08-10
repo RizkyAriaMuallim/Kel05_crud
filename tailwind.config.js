@@ -32,7 +32,11 @@ module.exports = {
         'main' : '#475569',
         'buttRed' : '#EF4444',
         'buttAdd' : '#3B82F6',
-        'boxData' : '#334155'
+        'boxData' : '#334155',
+        'hovRed' : '#dc2626',
+        'hovProfile' : '#f1f5f9',
+        'hovAddProd' : '#2563eb',
+        'hovEdit' : '#059669',
         
       },
       textColor : {
@@ -46,6 +50,7 @@ module.exports = {
         '270' : '270px',
         '117' : '117px',
         '246' : '246px',
+        '280' : '280px',
       },
       borderRadius : {
         '8' : '8px',
