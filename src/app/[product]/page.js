@@ -34,7 +34,10 @@ export default function EditProduct({ params })  {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(updatedProduct),
-      });
+      })
+
+      // .then((res) => res.json())
+      // .then(console.log);
 
       if (response.ok) {
         // Handle success
