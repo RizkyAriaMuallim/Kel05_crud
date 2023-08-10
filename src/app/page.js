@@ -34,9 +34,11 @@ export default function Home() {
         <div className='max-w-container m-container px-6'>
           <div className='flex justify-between py-6'>
             <p className='text-4xl text-white'>Products</p>
-            <div className='flex justify-center items-center w-168 h-10 rounded-lg bg-buttAdd text-white text-base hover:bg-hovAddProd'>
-              <Link href='/add'>Add New Product</Link>
-            </div>
+            <Link href='/add'>
+              <div className='flex justify-center items-center w-168 h-10 rounded-lg bg-buttAdd text-white text-base hover:bg-hovAddProd'>
+                Add New Product
+              </div>
+            </Link>
           </div>
           <div className='grid grid-cols-4 gap-6'>
             {products &&
@@ -44,7 +46,12 @@ export default function Home() {
               products.map((product, index) => {
                 return (
                   <div className='max-lg:col-span-2' key={index}>
-                    <DataBox title={product.title} price={product.price} images={product.images[0]}/>
+                    <DataBox 
+                      title={product.title} 
+                      price={product.price} 
+                      images={product.images[0]}
+                      prodIdx={product.id}
+                    />
                   </div>
                 );
             })}

@@ -2,8 +2,9 @@
 import React, { Fragment, useState} from "react";
 import 'tailwindcss/tailwind.css';
 import Modal from "../modal/modal";
+import Link from "next/link";
 
-export default function DataBox ({ title, price, images }) {
+export default function DataBox ({ title, price, images, prodIdx }) {
     const [showModal, setShowModal] = useState(false);
     return (
         <Fragment>
@@ -21,12 +22,20 @@ export default function DataBox ({ title, price, images }) {
                         <button className="flex items-center justify-center bg-white border w-full mr-3 h-38 border-buttRemove rounded-8 text-buttRemove hover:bg-hovRed hover:text-white"
                         onClick={() =>
                             setShowModal(true)}>Remove</button>
-                        <button className="flex items-center justify-center bg-white border w-full h-38  border-buttEdit rounded-8 text-buttEdit hover:bg-hovEdit hover:text-white">Edit</button>
+                        {/* <button className="flex items-center justify-center bg-white border w-full h-38  border-buttEdit rounded-8 text-buttEdit hover:bg-hovEdit hover:text-white">
+                            <Link href={`/${prodIdx}`}>Edit</Link>
+                        </button> */}
+
+                        <Link href={`/${prodIdx}`} className=" w-full">
+                            <div className="flex items-center justify-center bg-white border w-full h-38  border-buttEdit rounded-8 text-buttEdit hover:bg-hovEdit hover:text-white">
+                                Edit
+                            </div>
+                        </Link>
                     </div>
                 </div>
             </div>
             <Modal title={title} isVisible={showModal} onClose={() => 
             setShowModal(false)}/>
         </Fragment>
-    )
+    );
 }
